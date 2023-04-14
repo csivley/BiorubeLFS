@@ -125,6 +125,9 @@ TagManager:
   - Congratulations Menu
   - 
   m_SortingLayers:
+  - name: Back
+    uniqueID: 1035336207
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

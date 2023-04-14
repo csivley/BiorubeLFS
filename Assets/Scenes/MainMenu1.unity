@@ -152,6 +152,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1058251693}
   m_RootOrder: 0
@@ -303,6 +304,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21241476, guid: 75193b975585a6348a6e437ddd05683d, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21241476, guid: 75193b975585a6348a6e437ddd05683d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1035336207
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75193b975585a6348a6e437ddd05683d, type: 3}
 --- !u!1 &346306276
@@ -384,6 +393,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -150, y: 120, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 6.006231}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570964346}
   m_RootOrder: 3
@@ -476,6 +486,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -507,6 +518,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -183, y: 115, z: -3}
   m_LocalScale: {x: 49.05144, y: 56.129333, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570964346}
   m_RootOrder: 4
@@ -598,6 +610,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 77313899}
   m_Father: {fileID: 1483393498}
@@ -753,6 +766,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 70, y: 100, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570964346}
   m_RootOrder: 1
@@ -795,8 +809,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1035336207
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 870446303c3cb69439b61f3292970bc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -837,6 +851,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1058251693}
   m_Father: {fileID: 1570964346}
@@ -844,7 +859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 199.728, y: 147.618}
+  m_AnchoredPosition: {x: 199.72803, y: 147.61798}
   m_SizeDelta: {x: 377.28, y: 295.227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483393499
@@ -888,8 +903,9 @@ MonoBehaviour:
     Metteer, \n   Jeremy Parker, Jeremy Rogers, \n   Danny Carroll, Eric Rogers,\n 
     Kevin Means, Jonathan Dauwen,\n   Jason Hymas, Shelley Bess, \n   Chris Charlton,
     Denzel Sears, \n   Lisa George, Daniel Hughes, \n   David Brosnan, Joshua Brookover,\n  
-    Eric Day, William Kelley, \n   Page Sparks, Christine Byrd,\n   Nicholas White
-    and Aaron Agee\n\nDesigned and developed at Athens\nState University."
+    Eric Day, William Kelley, \n   Page Sparks, Christine Byrd,\n   Nicholas White,
+    Aaron Agee\n   Aleksandr Gryzlov and Codey Sivley\n\nDesigned and developed at
+    Athens\nState University."
 --- !u!222 &1483393500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -991,6 +1007,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1723254607}
   - {fileID: 1295926778}
@@ -1039,7 +1056,6 @@ MonoBehaviour:
   cell2: {fileID: 450786, guid: 780a81cd95dbe2141a1c808134f5d457, type: 3}
   cell3: {fileID: 410928, guid: 1f33ce29adbbb3e4395a2eaf988dcc14, type: 3}
   cell4: {fileID: 494170, guid: fec69be94d1b43349b7bffd258ffae14, type: 3}
-  cell5: {fileID: 428268, guid: dcee464f8a210d04aadcf64f270635a7, type: 3}
   cell6: {fileID: 496870, guid: 34625626b38463e40a55fcfc4f78eb04, type: 3}
   cellPos: {x: 0, y: 0, z: 0}
   infoBtn: {fileID: 1626707402}
@@ -1169,6 +1185,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -182, y: 112, z: -1}
   m_LocalScale: {x: 48.053894, y: 60.834553, z: 1.00002}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570964346}
   m_RootOrder: 6
@@ -1255,6 +1272,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570964346}
   m_RootOrder: 9
@@ -1409,6 +1427,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -185, y: 115, z: -2}
   m_LocalScale: {x: 47.713566, y: 57.441628, z: 6}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570964346}
   m_RootOrder: 5
@@ -1493,6 +1512,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.00002, y: 1.00002, z: 1.00002}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570964346}
   m_RootOrder: 0
@@ -1539,6 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d49b7c1bcd2e07499844da127be038d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_ForceModuleActive: 0
 --- !u!114 &2014378244
 MonoBehaviour:
@@ -1552,6 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1584,6 +1606,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1617,6 +1640,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570964346}
   m_RootOrder: 7
