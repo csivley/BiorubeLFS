@@ -58,6 +58,7 @@ public class GTP_CmdCtrl: MonoBehaviour
     //private Vector2 randomDirection;  // new direction vector
     public Vector3 dockingPosition;    // myTarget position +/- offset
     private Vector3 lastPosition;
+    private Quaternion aimRotation;        //used to point GTP towards dock before moving.
 
     private Roamer r;                             //an object that holds the values for the roaming (random movement) methods
 
@@ -129,33 +130,37 @@ public class GTP_CmdCtrl: MonoBehaviour
             }
             else if (!docked)
             {
-                if ((delay += Time.deltaTime) < 3) //wait 3(from 5) seconds before proceeding to target becuse this gives time for the GDP to exit the TrimericGprotein before it starts targeting it
-                    r.Roaming(this.gameObject);
-                else
-                {
-                    //dockingPosition = GetOffset();
-                    docked = r.ProceedToVector(this.gameObject, dockingPosition);
-                    timerforlockon++;
 
-                    if (timerforlockon > timerforlockonMAX && !docked) //if timer is high
-                    {                                  //reset lockedon,opentarget?,timer, mytarget.tag
-                        targeting = false;
-                        if (openTarget != null)
-                        {
-                            openTarget = null;
-                            myTarget.tag = "DockedG_Protein";
-                        }
-                        else
-                        {
-                            myTarget.tag = "tGProteinDock";
-                            myTarget = null;
-                        }
-                        openTarget = null;
-                        obj = null;
-                        timerforlockon = 0;
+                    aimRotation = Quaternion.LookRotation(Vector3.forward, dockingPosition - transform.position); //calculate angle to face for the delay rotation
+                    if ((delay += Time.deltaTime) < 3)
+                    {  //wait 3(from 5) seconds before proceeding to target becuse this gives time for the GDP to exit the TrimericGprotein before it starts targeting it
+                         transform.rotation = Quaternion.Slerp(transform.rotation, aimRotation, 2 * Time.deltaTime);
                     }
+                    else
+                    {
+                         //dockingPosition = GetOffset();
+                         docked = r.ProceedToVector(this.gameObject, dockingPosition);
+                         timerforlockon++;
 
-                }
+                         if (timerforlockon > timerforlockonMAX && !docked) //if timer is high
+                         {                                  //reset lockedon,opentarget?,timer, mytarget.tag
+                              targeting = false;
+                              if (openTarget != null)
+                              {
+                                   openTarget = null;
+                                   myTarget.tag = "DockedG_Protein";
+                              }
+                              else
+                              {
+                                   myTarget.tag = "tGProteinDock";
+                                   myTarget = null;
+                              }
+                              openTarget = null;
+                              obj = null;
+                              timerforlockon = 0;
+                         }
+
+                    }
                 if (docked)
                 {
                     if (doOnce)
