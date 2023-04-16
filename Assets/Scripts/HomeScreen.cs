@@ -88,8 +88,8 @@ public class HomeScreen : MonoBehaviour
         switch(cell)
         {
             case 1: //largest cell in the lower right corner of the home screen
-                cellPos = new Vector3(52.1f, -26.6f, 39);
-                cell6.localScale = new Vector3(11.57F, 11.57f, 0);//scale blinking cell to match the larger cell1
+                cellPos = new Vector3(53.255f, -27.22f, 39);
+                cell6.localScale = new Vector3(11.825F, 11.825f, 0);//scale blinking cell to match the larger cell1
                 break;
             case 2:
                 cellPos = new Vector3(9.0f, -33.0f, 43f);
