@@ -12,7 +12,6 @@ public class HomeScreen : MonoBehaviour
     public Transform cell2;
     public Transform cell3;
     public Transform cell4;
-  
     public Transform cell6;
     public Vector3 cellPos = new Vector3(0, 0, 0);
     public GameObject infoBtn;
@@ -32,22 +31,22 @@ public class HomeScreen : MonoBehaviour
         //The followin block of code instantiates cell prefabs approximately 1 every 0.5 seconds
         //A 0.5 second delay is added to give time for the Unity screen to execute at startup
         //Without the delay, the cells spawn prior to displaying the home screen;
-        //Aleksandr Gryzlov: deleted cell 5 spawn and blink because main menu is overloaded and some spries overlaps on each other
-        //moved cell 2,3,4 to stop them from overlapsing
-        if(delay++ < 128 && spawningCells)
+        if (delay++ < 128 && spawningCells)
         {
-            switch(delay)
+            switch (delay)
             {
                 case 38:
-                    PopupCell(cell2, 9.0f, -33.0f, 44f);
+                    PopupCell(cell2, 9.50f, -33.0f, 44f);
                     break;
                 case 51:
-                    PopupCell(cell3, 54.0f, 28.8f, 46f);
+                    PopupCell(cell3, 55.9f, 28.8f, 46f);
                     break;
                 case 64:
-                    PopupCell(cell4, 18.0f, 8.50f, 48f);
+                    PopupCell(cell4, 16.0f, 5.50f, 48f);
                     break;
-             
+                case 78:
+                    PopupCell(cell1, 50.0f, -25.0f, 49f);
+                    break;
                 case 128:
                     playBtn.SetActive(true);
                     infoBtn.SetActive(true);
@@ -57,7 +56,7 @@ public class HomeScreen : MonoBehaviour
         else
         {   //set spawning to false and begin animation
             spawningCells = false;
-            if(delay++ > 100)//Blink every two seconds
+            if (delay++ > 100)//Blink every two seconds
             {
                 delay = 0;
                 Blink();
@@ -77,30 +76,31 @@ public class HomeScreen : MonoBehaviour
     {   //If understood correctly, the random number generator generates a float
         //number between a min and max inclusive.  Typecasting the float to int
         //results in a less than desirable probability the random value will equal
-        // the maximum value.  Therefore, maximum of 4, therefore a random value
-        // between 1 and 5 (inclusive) is used.
+        // the maximum value.  Therefore, maximum of 5, therefore a random value
+        // between 1 and 6 (inclusive) is used.
 
         int cell = (int)Random.Range(1f, 5f);
 
         cell6.localScale = new Vector3(5, 5, 0);
         cellPos = new Vector3(0, 0, 0);
 
-        switch(cell)
+        switch (cell)
         {
             case 1: //largest cell in the lower right corner of the home screen
-                cellPos = new Vector3(53.255f, -27.22f, 39);
-                cell6.localScale = new Vector3(11.825F, 11.825f, 0);//scale blinking cell to match the larger cell1
+                cellPos = new Vector3(50f, -25f, 39);
+                cell6.localScale = new Vector3(10F, 10f, 0);//scale blinking cell to match the larger cell1
                 break;
             case 2:
-                cellPos = new Vector3(9.0f, -33.0f, 43f);
+                cellPos = new Vector3(9.50f, -33.0f, 43f);
                 break;
             case 3:
-                cellPos = new Vector3(54.0f, 28.8f, 45f);
+                cellPos = new Vector3(55.9f, 28.8f, 45f);
                 break;
             case 4:
-                cellPos = new Vector3(18.0f, 8.50f, 47f);
+                cellPos = new Vector3(16.0f, 5.50f, 47f);
                 break;
-            default:                
+            default: //case 5 and the unlikely case 6: 
+                cellPos = new Vector3(32.0f, 20.0f, 49);
                 break;
         }
         Transform cloneCell = Instantiate(cell6, cellPos, cell6.rotation = Quaternion.identity) as Transform;
@@ -112,7 +112,7 @@ public class HomeScreen : MonoBehaviour
         //Destroys the instantiated blinking cell giving the cells
         //the illusion of blinking.
         yield return new WaitForSeconds(0.1f);
-        if(cloneCell != null)
+        if (cloneCell != null)
             Destroy(cloneCell.gameObject);
     }
 }
