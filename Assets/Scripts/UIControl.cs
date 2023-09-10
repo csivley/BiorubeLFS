@@ -8,4 +8,9 @@ public class UIControl : MonoBehaviour
 	{
 		Application.LoadLevel(sceneName);
 	}
+
+	public void quitGame()
+    {
+		Application.Quit(); 
+    }
 }

@@ -40,5 +40,11 @@ public class LoadScene : MonoBehaviour
         GameWon.Set_WinConditions();
     }
 
+    // Goes through and terminates the game client 
+    public void quitGame()
+    {
+        Application.Quit(); 
+    }
+
 
 }
